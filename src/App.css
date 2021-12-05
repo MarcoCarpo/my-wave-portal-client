@@ -1,38 +1,99 @@
-.App {
+.container__outer {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    0deg,
+    rgba(208, 133, 241, 1) 0%,
+    rgba(113, 255, 232, 1) 100%
+  );
+  display: flex;
+  position: relative;
+}
+
+.container__background {
+  background-image: linear-gradient(rgba(208, 133, 241, 1) 1px, transparent 1px),
+    linear-gradient(to right, rgba(208, 133, 241, 1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  width: 100%;
+}
+
+.container__inner {
+  padding: 50px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  font-size: 56px;
+  font-weight: bold;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bio {
+  font-size: 24px;
+  margin: 40px 0 20px;
+  padding: 10px;
+  font-weight: 500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.info {
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.15s ease-out;
+}
+
+a:hover {
+  color: rgba(208, 133, 241, 1);
+}
+
+.waveButton {
+  padding: 5px;
+  min-width: 100px;
+  border: none;
+  height: 50px;
+  border-radius: 100px;
+  background: rgb(45, 0, 128);
   color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.1s ease-out;
 }
 
-.App-link {
-  color: #61dafb;
+.waveButton:hover {
+  transform: scale(1.1);
+  background: rgba(208, 133, 241, 1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.monster {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  background: rgba(255, 255, 255);
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  box-shadow: 2px 0px 10px 5px rgba(48, 48, 48, 0.274);
+}
+
+.monster .eye {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(45, 0, 128);
+}
+
+.monster .eye.eye-right {
+  left: 100%;
+  transform: translate(calc(-100% - 20px), 0);
 }
